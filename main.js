@@ -11,11 +11,14 @@
   const test = $("main");
   const listMember = $("#list_member");
   const buttonSubmit = $("#button_submit");
+  const area_member = $(".area_member");
+  const logodiprotech = $(".logodiprotech");
   //=====< Danh sách phần thưởng >=====
   var createList = [];
 
   buttonSubmit.addEventListener("click", (event) => {
     event.preventDefault();
+    area_member.style.display = "none";
     const inputValues = listMember.value
       .split("\n")
       .filter((item) => item.trim() !== ""); // Tách chuỗi dựa trên dấu Enter và loại bỏ các chuỗi trống
@@ -121,7 +124,7 @@
         isRotating = false;
         showMsgModal.style.display = "block";
         showMsgContent.innerHTML = `
-        <p class="content">Nguyễn Hoàng Phúc Hải</p> 
+        <p class="content">${gift.text}</p> 
         <div class="blue"><img src="giphy.gif" alt="" /></div> 
       `;
         removeGiftFromList(gift.index);
@@ -144,6 +147,10 @@
     /********** Sự kiện click button start **********/
     wheel.addEventListener("click", () => {
       !isRotating && start();
+    });
+
+    logodiprotech.addEventListener("click", () => {
+      area_member.style.display = "block";
     });
   });
 })();

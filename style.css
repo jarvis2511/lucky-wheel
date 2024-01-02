@@ -18,6 +18,7 @@ body {
     --bg1,
     linear-gradient(176deg, #0a0c2d -7.69%, #183067 53.83%, #551515 101.47%)
   );
+  position: relative;
 }
 
 * {
@@ -54,7 +55,7 @@ span::before {
   left: 50%;
   border-left: 1rem solid transparent;
   border-right: 1rem solid transparent;
-  border-bottom: 2.5rem solid #d99b3f;
+  border-bottom: 2rem solid #d99b3f;
   z-index: 1;
   transform: translateX(-50%);
 }
@@ -141,6 +142,7 @@ button:hover {
 }
 
 .area_member {
+  display: block;
   color: white;
   position: absolute;
   right: 40px;
@@ -191,6 +193,7 @@ textarea {
   bottom: 20px;
   right: 40px;
 }
+
 
 .logodiprotech img {
   width: 230px;
@@ -250,26 +253,16 @@ textarea {
   font-weight: 700;
 }
 
-/* #notification_content p {
-  background: -webkit-linear-gradient(#d59c46, #ebc868);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
-
 .blue {
   position: absolute;
   opacity: 0.9;
 }
 
-/* .red {
-  position: absolute;
-  right: 0;
-}  */
-
 /* Background */
 .purl {
   position: absolute;
   top: 0;
+  left: 0;
 }
 .text-dipro {
   position: absolute;
@@ -314,6 +307,11 @@ textarea {
   position: absolute;
   left: 200px;
   bottom: 180px;
+}
+.star1 {
+  position: absolute;
+  right: 200px;
+  top: 200px;
 }
 
 @-webkit-keyframes my {
