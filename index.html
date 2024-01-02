@@ -8,24 +8,41 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div>
+      <div class="notification">
+        <div class="notification_header">
+          <p>Congratulation</p>
+          <div class="button-close">
+            <img src="iconclose.svg" alt="" />
+          </div>
+        </div>
+        <div id="notification_content"></div>
+      </div>
+    </div>
     <main>
       <section class="main">
         <span>
           <ul class="wheel"></ul>
         </span>
-        <button class="btn--wheel">Quay thưởng</button>
       </section>
-      <h2 class="msg"></h2>
-    </main>
-    <div class="area_member">
-      <textarea id="list_member" placeholder="Enter your member?"></textarea>
-      <div class="button_submit_member">
-        <button id="button_submit">Submit</button>
+      <div class="area_member">
+        <div class="area_textarea">
+          <textarea
+            id="list_member"
+            placeholder="Enter your member?"
+          ></textarea>
+        </div>
+        <div class="gift-textfield">
+          <img src="icongift.svg" alt="" />
+        </div>
+        <div class="button_submit_member">
+          <button id="button_submit">Submit</button>
+        </div>
       </div>
-    </div>
-    <div class="logodiprotech">
-      <img src="logodiprotech.png" alt="">
-    </div>
+      <div class="logodiprotech">
+        <img src="logodiprotech.png" alt="" />
+      </div>
+    </main>
     <script src="./main.js"></script>
   </body>
 </html>
