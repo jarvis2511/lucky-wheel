@@ -1,7 +1,7 @@
 (() => {
   const $ = document.querySelector.bind(document);
 
-  let timeRotate = 10000; //10 giây
+  let timeRotate = 14500; //10 giây
   let currentRotate = 0;
   let isRotating = false;
   const wheel = $(".wheel");
@@ -121,9 +121,8 @@
         isRotating = false;
         showMsgModal.style.display = "block";
         showMsgContent.innerHTML = `
-        <p>${gift.text}</p> 
-        <div class="blue"><img src="blue.svg" alt="" /></div> 
-        <div class="red"><img src="red.svg" alt="" /></div>
+        <p class="content">Nguyễn Hoàng Phúc Hải</p> 
+        <div class="blue"><img src="giphy.gif" alt="" /></div> 
       `;
         removeGiftFromList(gift.index);
         clearTimeout(timer);
