@@ -194,7 +194,6 @@ textarea {
   right: 40px;
 }
 
-
 .logodiprotech img {
   width: 230px;
 }
@@ -260,23 +259,39 @@ textarea {
 
 /* Background */
 .purl {
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  background-repeat: repeat-y;
+}
+.purl img {
+  animation: flashAnimation 0.3s infinite alternate;
+}
+
+@keyframes flashAnimation {
+  0% {
+    opacity: 0.5;
+    transform: translateX(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-1px);
+  }
 }
 .text-dipro {
   position: absolute;
-  top: -60px;
+  top: -8%;
 }
 .happy {
   position: absolute;
-  top: 300px;
-  left: 290px;
+  top: 36%;
+  left: 20%;
 }
 .ball-left {
   position: absolute;
-  top: 60px;
-  left: 90px;
+  top: 10%;
+  left: 8%;
   height: 50%;
 }
 
@@ -286,15 +301,17 @@ textarea {
 }
 
 .flower {
+  width: 100%;
+  height: auto;
   position: absolute;
   z-index: 3;
-  top: 35em;
+  top: 65%;
 }
 
 .ball-right {
   position: absolute;
-  right: 300px;
-  bottom: 20px;
+  right: 20%;
+  bottom: 10%;
   height: 50%;
 }
 
