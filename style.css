@@ -270,7 +270,7 @@ textarea {
 
 .text-dipro {
   position: absolute;
-  top: -8%;
+  top: -7%;
 }
 .happy {
   position: absolute;
@@ -309,18 +309,24 @@ textarea {
 
 .star {
   position: absolute;
-  left: 200px;
-  bottom: 180px;
+  left: 15%;
+  bottom: 20%;
 }
 .star1 {
   position: absolute;
-  right: 200px;
-  top: 200px;
+  right: 15%;
+  top: 20%;
 }
 .star2 {
   position: absolute;
-  right: 100px;
-  top: 300px;
+  right: 8%;
+  top: 30%;
+}
+
+.star3 {
+  position: absolute;
+  right: 30%;
+  bottom: 10%;
 }
 
 @-webkit-keyframes my {

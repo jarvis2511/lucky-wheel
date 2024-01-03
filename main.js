@@ -104,6 +104,7 @@
     /********** Hàm lấy phần thưởng **********/
     const getGift = () => {
       const randomIndex = Math.floor(Math.random() * createList.length);
+      console.log("randomIndex",randomIndex);
       if (createList[randomIndex].text == "") {
         start();
       } else return createList[randomIndex];
