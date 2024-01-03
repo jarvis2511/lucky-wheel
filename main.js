@@ -1,7 +1,7 @@
 (() => {
   const $ = document.querySelector.bind(document);
 
-  let timeRotate = 14000; //10 giây
+  let timeRotate = 21500; //20 giây
   let currentRotate = 0;
   let isRotating = false;
   const wheel = $(".wheel");
@@ -13,6 +13,8 @@
   const area_member = $(".area_member");
   const logodiprotech = $(".logodiprotech");
   const coating = $(".coating");
+  var audio = new Audio("sound/tick.mp3");
+  var clap = new Audio("sound/clap.mp3");
   //=====< Danh sách phần thưởng >=====
   var createList = [];
 
@@ -81,6 +83,7 @@
     };
 
     const start = () => {
+      audio.play();
       isRotating = true;
       //=====< Lấy 1 số ngầu nhiên 0 -> 1 >=====
 
@@ -116,9 +119,13 @@
         <div class="blue"><img src="images/giphy.gif" alt="" /></div> 
       `;
         coating.style.display = "block";
+        soundClap();
         removeGiftFromList(gift);
         clearTimeout(timer);
       }, timeRotate);
+    };
+    const soundClap = () => {
+      clap.play();
     };
 
     /********** Xoá phần tử ra khỏi mảng **********/
@@ -130,6 +137,7 @@
 
     /********** Tắt modal **********/
     buttonClose.addEventListener("click", () => {
+      clap.pause();
       coating.style.display = "none";
       showMsgModal.style.display = "none";
     });

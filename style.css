@@ -38,7 +38,7 @@ ul {
   border-radius: 50%;
   list-style: none;
   overflow: hidden;
-  transition: cubic-bezier(0.075, 0.8, 0.2, 1) 14s;
+  transition: cubic-bezier(0.075, 0.8, 0.2, 1) 21s;
 }
 
 span {
