@@ -38,7 +38,7 @@ ul {
   border-radius: 50%;
   list-style: none;
   overflow: hidden;
-  transition: cubic-bezier(0.075, 0.8, 0.2, 1) 3s;
+  transition: cubic-bezier(0.075, 0.8, 0.2, 1) 14s;
 }
 
 span {
@@ -144,8 +144,8 @@ button:hover {
   display: block;
   color: white;
   position: absolute;
-  right: 40px;
-  top: 60px;
+  right: 4%;
+  top: 10%;
   font-family: Nunito Sans;
 }
 .area_textarea {
