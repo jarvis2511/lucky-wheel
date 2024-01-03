@@ -85,7 +85,6 @@
     const start = () => {
       audio.play();
       isRotating = true;
-      //=====< Lấy 1 số ngầu nhiên 0 -> 1 >=====
 
       //=====< Gọi hàm lấy phần thưởng >=====
       const gift = getGift();
@@ -104,7 +103,6 @@
     /********** Hàm lấy phần thưởng **********/
     const getGift = () => {
       const randomIndex = Math.floor(Math.random() * createList.length);
-      console.log("randomIndex",randomIndex);
       if (createList[randomIndex].text == "") {
         start();
       } else return createList[randomIndex];
