@@ -1,18 +1,18 @@
 (() => {
   const $ = document.querySelector.bind(document);
 
-  let timeRotate = 14500; //10 giây
+  let timeRotate = 3000; //10 giây
   let currentRotate = 0;
   let isRotating = false;
   const wheel = $(".wheel");
   const showMsgModal = $(".notification");
   const showMsgContent = $("#notification_content");
   const buttonClose = $(".button-close");
-  const test = $("main");
   const listMember = $("#list_member");
   const buttonSubmit = $("#button_submit");
   const area_member = $(".area_member");
   const logodiprotech = $(".logodiprotech");
+  const coating = $(".coating");
   //=====< Danh sách phần thưởng >=====
   var createList = [];
 
@@ -23,12 +23,10 @@
       .split("\n")
       .filter((item) => item.trim() !== ""); // Tách chuỗi dựa trên dấu Enter và loại bỏ các chuỗi trống
 
-    const percentValue = 100 / inputValues.length;
-
     createList = inputValues.map((text) => ({
       text: text.trim(),
-      percent: percentValue / 100,
     }));
+
     var size = createList.length;
 
     //=====< Số đo góc của 1 phần thưởng chiếm trên hình tròn >=====
@@ -82,40 +80,25 @@
     const start = () => {
       isRotating = true;
       //=====< Lấy 1 số ngầu nhiên 0 -> 1 >=====
-      const random = Math.random();
 
       //=====< Gọi hàm lấy phần thưởng >=====
-      const gift = getGift(random);
+      const gift = getGift();
 
       //=====< Số vòng quay: 360 độ = 1 vòng (Góc quay hiện tại) >=====
       currentRotate += 360 * 10;
+      var index = createList.findIndex((item) => item.text === gift.text);
 
       //=====< Gọi hàm quay >=====
-      rotateWheel(currentRotate, gift.index);
+      rotateWheel(currentRotate, index);
 
       //=====< Gọi hàm in ra màn hình >=====
       showGift(gift);
     };
 
-    /********** Hàm quay vòng quay **********/
-
     /********** Hàm lấy phần thưởng **********/
-    const getGift = (randomNumber) => {
-      let currentPercent = 0;
-      let list = [];
-
-      createList.forEach((item, index) => {
-        //=====< Cộng lần lượt phần trăm trúng của các phần thưởng >=====
-        currentPercent += item.percent;
-
-        //=====< Số ngẫu nhiên nhỏ hơn hoặc bằng phần trăm hiện tại thì thêm phần thưởng vào danh sách >=====
-        if (randomNumber <= currentPercent) {
-          list.push({ ...item, index });
-        }
-      });
-
-      //=====< Phần thưởng đầu tiên trong danh sách là phần thưởng quay được>=====
-      return list[0];
+    const getGift = () => {
+      const randomIndex = Math.floor(Math.random() * createList.length);
+      return createList[randomIndex];
     };
 
     /********** In phần thưởng ra màn hình **********/
@@ -125,22 +108,24 @@
         showMsgModal.style.display = "block";
         showMsgContent.innerHTML = `
         <p class="content">${gift.text}</p> 
-        <div class="blue"><img src="giphy.gif" alt="" /></div> 
+        <div class="blue"><img src="images/giphy.gif" alt="" /></div> 
       `;
-        removeGiftFromList(gift.index);
+        coating.style.display = "block";
+        removeGiftFromList(gift);
         clearTimeout(timer);
       }, timeRotate);
     };
 
     /********** Xoá phần tử ra khỏi mảng **********/
-    const removeGiftFromList = (index) => {
+    const removeGiftFromList = (gift) => {
+      var index = createList.findIndex((item) => item.text === gift.text);
       createList.splice(index, 1); // Xoá phần tử tại vị trí index
-      size = size - 1;
       test();
     };
 
     /********** Tắt modal **********/
     buttonClose.addEventListener("click", () => {
+      coating.style.display = "none";
       showMsgModal.style.display = "none";
     });
 

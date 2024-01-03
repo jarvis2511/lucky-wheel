@@ -34,12 +34,11 @@ ul {
   width: var(--size-wheel);
   height: var(--size-wheel);
   background: linear-gradient(to right, #d59c46, #ebc868) border-box;
-  border-radius: 50em;
   border: 10px solid transparent;
   border-radius: 50%;
   list-style: none;
   overflow: hidden;
-  transition: cubic-bezier(0.075, 0.8, 0.2, 1) 14.5s;
+  transition: cubic-bezier(0.075, 0.8, 0.2, 1) 3s;
 }
 
 span {
@@ -68,7 +67,7 @@ span::after {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: url("logo.svg");
+  background-image: url("images/logo.svg");
   border-radius: 50%;
   z-index: 2;
 }
@@ -209,15 +208,16 @@ textarea {
   display: none;
   position: absolute;
   background-color: white;
-  width: 600px;
+  width: 640px;
   height: 250px;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   margin: auto;
-  z-index: 10;
+  z-index: 5;
   border-radius: 6px;
+  border: 2px solid #c58423;
 }
 
 .notification_header {
@@ -260,25 +260,14 @@ textarea {
 /* Background */
 .purl {
   width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  background-repeat: repeat-y;
-}
-.purl img {
-  animation: flashAnimation 0.3s infinite alternate;
+  background-image: url("images/Purl.svg");
+  background-repeat: repeat-x;
 }
 
-@keyframes flashAnimation {
-  0% {
-    opacity: 0.5;
-    transform: translateX(1px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(-1px);
-  }
-}
 .text-dipro {
   position: absolute;
   top: -8%;
@@ -301,8 +290,6 @@ textarea {
 }
 
 .flower {
-  width: 100%;
-  height: auto;
   position: absolute;
   z-index: 3;
   top: 65%;
@@ -329,6 +316,11 @@ textarea {
   position: absolute;
   right: 200px;
   top: 200px;
+}
+.star2 {
+  position: absolute;
+  right: 100px;
+  top: 300px;
 }
 
 @-webkit-keyframes my {
@@ -384,4 +376,14 @@ textarea {
   -moz-animation: my 1000ms infinite;
   -o-animation: my 1000ms infinite;
   animation: my 1000ms infinite;
+}
+
+.coating {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  z-index: 4;
+  opacity: 0.2;
 }
