@@ -37,6 +37,9 @@
       while (wheel.firstChild) {
         wheel.removeChild(wheel.firstChild);
       }
+      if (createList.length % 2 == 1) {
+        createList.push({ text: "" });
+      }
       size = createList.length;
 
       //=====< Số đo góc của 1 phần thưởng chiếm trên hình tròn >=====
@@ -98,7 +101,9 @@
     /********** Hàm lấy phần thưởng **********/
     const getGift = () => {
       const randomIndex = Math.floor(Math.random() * createList.length);
-      return createList[randomIndex];
+      if (createList[randomIndex].text == "") {
+        start();
+      } else return createList[randomIndex];
     };
 
     /********** In phần thưởng ra màn hình **********/
@@ -119,7 +124,7 @@
     /********** Xoá phần tử ra khỏi mảng **********/
     const removeGiftFromList = (gift) => {
       var index = createList.findIndex((item) => item.text === gift.text);
-      createList.splice(index, 1); // Xoá phần tử tại vị trí index
+      createList.splice(index, 1, { text: "" });
       test();
     };
 

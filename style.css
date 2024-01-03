@@ -208,7 +208,7 @@ textarea {
   display: none;
   position: absolute;
   background-color: white;
-  width: 640px;
+  width: 670px;
   height: 250px;
   left: 0;
   right: 0;
@@ -297,7 +297,7 @@ textarea {
 
 .ball-right {
   position: absolute;
-  right: 20%;
+  right: 17%;
   bottom: 10%;
   height: 50%;
 }
