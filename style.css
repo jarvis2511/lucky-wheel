@@ -260,11 +260,11 @@ textarea {
 /* Background */
 .purl {
   width: 100%;
-  height: 100%;
+  height: 15%;
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("images/Purl.svg");
+  background-image: url("images/Purl.gif");
   background-repeat: repeat-x;
 }
 
@@ -272,11 +272,13 @@ textarea {
   position: absolute;
   top: -7%;
 }
+
 .happy {
   position: absolute;
   top: 36%;
   left: 20%;
 }
+
 .ball-left {
   position: absolute;
   top: 10%;
